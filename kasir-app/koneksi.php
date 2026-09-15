@@ -3,7 +3,7 @@
 $host    = getenv('KASIR_DB_HOST') ?: 'localhost';
 $db      = getenv('KASIR_DB_NAME') ?: 'db_kasir';
 $user    = getenv('KASIR_DB_USER') ?: 'root';
-$pass    = getenv('KASIR_DB_PASS') ?: '';
+$pass    = getenv('KASIR_DB_PASS') ?: 'root';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";

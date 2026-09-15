@@ -1,5 +1,20 @@
 <?php
 
+function ensureDetailPenjualanTable(PDO $pdo): void
+{
+    $pdo->exec("CREATE TABLE IF NOT EXISTS detail_penjualan (
+        id_detail      INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        id_penjualan   INT UNSIGNED NOT NULL,
+        id_produk      INT UNSIGNED NOT NULL,
+        qty            INT UNSIGNED NOT NULL DEFAULT 1,
+        harga_satuan   INT UNSIGNED NOT NULL DEFAULT 0,
+        subtotal       INT UNSIGNED NOT NULL DEFAULT 0,
+        created_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        INDEX idx_id_penjualan (id_penjualan),
+        INDEX idx_id_produk (id_produk)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
+}
+
 function ensurePromoTable(PDO $pdo): void
 {
     $pdo->exec("CREATE TABLE IF NOT EXISTS promo (
