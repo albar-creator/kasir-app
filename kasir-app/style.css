@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+    --ink: #17212b;
+    --muted: #6f7d89;
+    --paper: #f5f7f9;
+    --surface: #ffffff;
+    --line: #e5eaee;
+    --navy: #162b3a;
+    --teal: #0f766e;
+    --teal-soft: #e4f4f1;
+    --amber: #d97706;
+    --danger: #c24145;
+    --shadow: 0 14px 35px rgba(24, 42, 55, .08);
+}
+
+* { box-sizing: border-box; }
+body, input, select, textarea, button { font-family: 'DM Sans', sans-serif; }
+body.app-body { color: var(--ink); background: var(--paper) !important; }
+h1, h2, h3, h4, h5, .navbar-brand { font-family: 'Space Grotesk', sans-serif; }
+
+.navbar { background: var(--navy) !important; box-shadow: 0 4px 18px rgba(16, 36, 49, .16); }
+.navbar-brand { letter-spacing: -.02em; }
+.navbar .text-white { color: #dce7ec !important; font-size: .9rem; }
+.navbar a { text-decoration: none; }
+
+.container, .container-fluid { position: relative; }
+.card { border: 1px solid var(--line) !important; border-radius: 14px !important; box-shadow: var(--shadow) !important; }
+.card h5 { color: var(--ink); font-weight: 600; }
+.card-body { padding: 1.35rem; }
+
+.btn { border-radius: 9px; font-weight: 600; }
+.btn-primary { background: var(--teal); border-color: var(--teal); }
+.btn-primary:hover, .btn-primary:focus { background: #0b5f59; border-color: #0b5f59; }
+.btn-success { background: #237b55; border-color: #237b55; }
+.form-control, .form-select { border-color: #d9e1e6; border-radius: 9px; min-height: 42px; }
+.form-control:focus, .form-select:focus { border-color: #65aaa4; box-shadow: 0 0 0 .2rem rgba(15, 118, 110, .12); }
+.form-label { color: #4f606c; font-weight: 600; font-size: .9rem; }
+
+.admin-tabs { background: rgba(255, 255, 255, .92) !important; border-color: var(--line) !important; }
+.admin-tabs .nav-tabs { border-bottom-color: var(--line) !important; }
+.admin-tabs .nav-link { color: var(--muted); border: 0; border-bottom: 3px solid transparent; font-weight: 600; }
+.admin-tabs .nav-link:hover { color: var(--teal); }
+.admin-tabs .nav-link.active { color: var(--teal); background: transparent; border-bottom-color: var(--teal); }
+.master-tabs { background: rgba(255, 255, 255, .92) !important; border-color: var(--line) !important; }
+.master-tabs .nav-tabs { border-bottom-color: var(--line) !important; }
+.master-tabs .nav-link { color: var(--muted); border: 0; border-bottom: 3px solid transparent; font-weight: 600; }
+.master-tabs .nav-link:hover, .master-tabs .nav-link.active { color: var(--teal); }
+.master-tabs .nav-link.active { background: transparent; border-bottom-color: var(--teal); }
+
+.admin-section .card.border-0 { border: 1px solid var(--line) !important; position: relative; overflow: hidden; }
+.admin-section .card.border-0::after { content: ''; position: absolute; right: -22px; top: -22px; width: 78px; height: 78px; border-radius: 50%; background: var(--teal-soft); }
+.admin-section .card.border-0 h4 { position: relative; z-index: 1; color: var(--navy); }
+.admin-section .text-muted.small { color: var(--muted) !important; font-weight: 600; }
+
+.table { --bs-table-striped-bg: #f8fafb; vertical-align: middle; }
+.table thead th { color: #61717b; background: #f5f8f9; border-bottom: 1px solid var(--line); font-size: .78rem; letter-spacing: .03em; text-transform: uppercase; }
+.table td { color: #334550; border-color: #edf1f3; }
+.table-responsive { border-radius: 10px; }
+
+.alert { border: 0; border-radius: 10px; box-shadow: 0 6px 18px rgba(24, 42, 55, .06); }
+
+/* POS work surface */
+body.app-body .container-fluid.mt-4 { max-width: 1500px; }
+#barcodeInput { border: 2px solid #b9dcd7; min-height: 52px; }
+#barcodeInput:focus { border-color: var(--teal); }
+#label-total { color: var(--teal) !important; }
+#laporan-saya { max-width: 1500px; }
+#laporan-saya .border.rounded { border-color: var(--line) !important; background: #fbfcfc; }
+
+/* Login */
+.login-page { min-height: 100vh; background: radial-gradient(circle at 12% 15%, #d9f0ec 0, transparent 32%), linear-gradient(135deg, #eff5f4 0%, #f8fafb 55%, #eaf1f3 100%); }
+.login-page .card { border: 0 !important; overflow: hidden; }
+.login-page .card-body { padding: 2.2rem; }
+.login-page h4 { color: var(--navy); font-size: 1.5rem; }
+.login-page .btn-primary { min-height: 46px; }
+
+@media (max-width: 767.98px) {
+    body { font-size: 1rem; }
+    .navbar { padding: .8rem 1rem; }
+    .navbar .container-fluid { display: block; }
+    .navbar-brand { display: block; font-size: 1.12rem; margin-bottom: .55rem !important; }
+    .navbar .text-white { display: block; font-size: .96rem; line-height: 1.8; }
+    .navbar .text-white a { display: inline-block; margin-right: .65rem !important; }
+    .card-body { padding: 1.2rem; }
+    .card h5 { font-size: 1.12rem; }
+    .btn { min-height: 44px; padding: .65rem .9rem; }
+    .btn-sm { min-height: 40px; padding: .55rem .75rem; }
+    .form-control, .form-select { min-height: 46px; font-size: 1rem; }
+    .form-label { font-size: .98rem; }
+    .admin-tabs { border-radius: 10px !important; }
+    .admin-tabs .nav-link, .master-tabs .nav-link { padding: .75rem .85rem !important; font-size: 1rem !important; white-space: nowrap; }
+    .admin-tabs ul, .master-tabs ul { min-height: 54px; align-items: center; }
+    .table { font-size: .95rem; min-width: 620px; }
+    .table thead th { font-size: .82rem; }
+    .table-responsive { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .admin-section .row, body.app-body .row { --bs-gutter-y: 1rem; }
+    #barcodeInput { min-height: 56px; font-size: 1.05rem; }
+    #manualProductSearch { min-height: 50px; }
+    #label-total { font-size: 1.8rem; }
+    #laporan-saya .fs-4 { font-size: 1.35rem !important; }
+    .login-page .card-body { padding: 1.5rem; }
+    .login-page .col-md-4 { width: 100%; }
+}
